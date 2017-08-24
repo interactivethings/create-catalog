@@ -13,6 +13,7 @@
   ],
   "dependencies": {
     "args": "^3.0.4",
+    "babel-runtime": "^6.26.0",
     "chalk": "^2.1.0",
     "execa": "^0.8.0",
     "mkdirp-then": "^1.2.0",
