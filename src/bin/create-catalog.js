@@ -23,7 +23,7 @@ type Options = {
   catalogDir: string
 }
 
-const allDependencies = ['catalog@^3.0.0-rc.4', 'react', 'react-dom'];
+const allDependencies = ['catalog', 'react', 'react-dom'];
 
 const packageTemplate = (appName: string, catalogDir: string) => `{
   "name": "${appName}",
@@ -84,7 +84,7 @@ const run = async (dir: string, {catalogDir}: Options) => {
       missingDependencies = allDependencies;
     }
     if (!pkg.dependencies.catalog) {
-      missingDependencies.push('catalog@^3.0.0-rc.4');
+      missingDependencies.push('catalog');
     }
     if (!pkg.dependencies.react) {
       missingDependencies.push('react');
@@ -118,7 +118,7 @@ const run = async (dir: string, {catalogDir}: Options) => {
     spinner.succeed();    
   } else {
     // Fresh app
-    spinner.start('Creating package.json')
+    spinner.start('Creating app')
     await writeFile(join(appDir, 'package.json'), packageTemplate(appName, catalogDir))
     spinner.succeed();
     
