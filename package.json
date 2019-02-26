@@ -30,6 +30,7 @@
   },
   "scripts": {
     "build-watch": "babel src --out-dir dist --watch",
-    "build": "babel src --out-dir dist"
+    "build": "babel src --out-dir dist",
+    "prepublishOnly": "npm run build"
   }
 }
